@@ -1,5 +1,5 @@
 // Esta função gera uma lista das cartas em ordem aleatória e exibe na tela.
-function getRandomListInt(min, max) {
+function getRandomListInt(min, max, baralho) {
     let listInicial = [];
     let listFinal = [];
     while (listFinal.length != max){    
@@ -14,16 +14,17 @@ function getRandomListInt(min, max) {
     };
 };
 
-getRandomListInt(0, 16)
+getRandomListInt(0, 16, baralho)
 
-let back = document.querySelectorAll(".back");
 let listStsOff = []
 let list = []
+let back = document.querySelectorAll(".back");
 for(let i=0; i< back.length; i++){
     back[i].addEventListener("click", function(){
-        back[i].style.opacity = '0%'
-        console.log(back[i].parentElement)
-        listStsOff.push(back[i].parentElement)
+        let card = back[i].parentElement
+        card.classList.add("flip")
+        console.log(card)
+        listStsOff.push(card)
         if(listStsOff.length > 1){
             let n1 = listStsOff[0].getAttribute('nome')
             let n2 = listStsOff[1].getAttribute('nome')
@@ -39,13 +40,11 @@ for(let i=0; i< back.length; i++){
             }else{
                 setTimeout(function(){
                     for(let n of listStsOff){
-                        n1 = n.children[1]
-                        n1.style.opacity = '100%'
+                        n.classList.remove("flip")
+                        listStsOff = []
                     }
-                    listStsOff =[]
                 },500)
             }
         }
     })
 }
-
