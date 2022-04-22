@@ -1,21 +1,3 @@
-// Esta função gera uma lista das cartas em ordem aleatória e exibe na tela.
-function getRandomListInt(min, max, baralho) {
-    let listInicial = [];
-    let listFinal = [];
-    while (listFinal.length != max){    
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        let n = Math.floor(Math.random() * (max - min)) + min;
-        listInicial.push(n);
-        listFinal = [...new Set(listInicial)];
-    }
-    for (let i of listFinal) {
-        main.innerHTML += baralho[i].card;
-    };
-};
-
-getRandomListInt(0, 16, baralho)
-
 let listStsOff = []
 let list = []
 let back = document.querySelectorAll(".back");
@@ -34,7 +16,7 @@ for(let i=0; i< back.length; i++){
                 listStsOff =[]
                 if(list.length == 16){
                     setTimeout(function(){
-                        alert("Parabéns! Você completou o jogo. Reinicie a página.")
+                        gameOver()
                     },200)
                 }
             }else{

@@ -10,6 +10,45 @@ body{
     align-items: center;
 }
 
+#gameOverWindow{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 80%;
+}
+
+#gameOverMsg{
+    display: grid;
+    grid-template-rows: 60% 40%;
+    justify-items: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 40px;
+    font-weight: 900;
+    text-shadow: 0px 5px 10px black;
+}
+
+#btn_restart{
+    cursor: pointer;
+    padding: 5px;
+    margin: 0%;
+    background-color: rgb(0, 204, 255);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px rgb(0, 0, 0);
+    box-shadow: 0px 5px 10px rgb(61, 61, 61);
+    border: none;
+    border-radius: 6px;
+}
+
 header{
     display: grid;
     justify-items: center;
